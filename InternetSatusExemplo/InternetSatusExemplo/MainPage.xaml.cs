@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.Connectivity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,11 @@ namespace InternetSatusExemplo
 		public MainPage()
 		{
 			InitializeComponent();
-		}
+
+            btnTeste.Clicked +=  (sender, e) => {
+
+                lblConexao.Text = CrossConnectivity.Current.IsConnected ? "Conectado" : "Coloque créditos";
+            };
+        }
 	}
 }
